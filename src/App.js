@@ -6,6 +6,8 @@ import Navigation from "./components/Navigation";
 import Detail from "./routes/Detail";
 import "./App.css";
 
+// App as router
+// exact={true} to render only one component
 function App() {
   return (
     <HashRouter>

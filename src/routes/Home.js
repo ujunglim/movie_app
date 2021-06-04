@@ -5,18 +5,21 @@ import "./Home.css";
 
 class Home extends React.Component {
   state = {
-    isLoading: true,
+    isLoading: true,  // initially app is loading
     movies: []
   };
 
+  // get movie 
   getMovies = async () => {
-    const {data: {data: {movies}}} =  await axios.get(
+    // axios is requesting data
+    const {data: {data: {movies}}} = await axios.get(
       "https://yts.mx/api/v2/list_movies.json?sort_by=rating");
-    this.setState({movies, isLoading: false}) ;
+    // get data from axios and save to state as movies
+    this.setState({movies, isLoading: false}); // after getting data, close loading
   };
 
   componentDidMount() {
-    this.getMovies();
+    this.getMovies(); // get movie data when app is ready
   }
 
   render() {
@@ -40,8 +43,8 @@ class Home extends React.Component {
                 genres={movie.genres}
               />
             ))}
-          </div>)
-          }
+          </div>
+        )}
       </section>
     );
   }

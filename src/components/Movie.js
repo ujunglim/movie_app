@@ -9,13 +9,7 @@ function Movie({id, title, year, summary, poster, genres}) {
 			<Link 
 				to={{
 					pathname: `/movie/${id}`,
-					state: {
-						title,   //title: title
-						year,
-						summary, 
-						poster,
-						genres
-					}
+					state: {title, year, summary, poster, genres}
 				}}
 			>
 				<img src={poster} alt={title} title={title}/>
@@ -27,7 +21,7 @@ function Movie({id, title, year, summary, poster, genres}) {
 							<li key={index} className="genres_genre">{genre}</li>
 						))}
 					</ul>
-					<p className="movie_summary">{summary.slice(0, 180)}...</p>
+					<p className="movie_summary">{summary.slice(0, 180)}...</p> {/* max length of summary is 180*/}
 				</div>
 			</Link>
 		</div>
@@ -36,12 +30,12 @@ function Movie({id, title, year, summary, poster, genres}) {
 }
 
 Movie.propTypes = {
-    id: PropTypes.number.isRequired,
-    year: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    summary: PropTypes.string.isRequired,
-		poster: PropTypes.string.isRequired,
-		genres: PropTypes.arrayOf(PropTypes.string).isRequired
+	id: PropTypes.number.isRequired,
+	year: PropTypes.number.isRequired,
+	title: PropTypes.string.isRequired,
+	summary: PropTypes.string.isRequired,
+	poster: PropTypes.string.isRequired,
+	genres: PropTypes.arrayOf(PropTypes.string).isRequired
 }
 
 export default Movie;
