@@ -4,7 +4,7 @@
 
 ![preview](/img/preview.png)
 
-## [Check out it👆](https://ujunglim.github.io/movie_app/#/){:target="\_blank"}
+## [Check out it👆](https://ujunglim.github.io/movie_app/#/)
 
 ## App
 
